@@ -1,9 +1,9 @@
 package AtividadeUm.src.project.cleancode.infnet;
 
-import AtividadeUm.src.project.cleancode.infnet.service.Pagamento;
-import AtividadeUm.src.project.cleancode.infnet.vo.Assinatura;
-import AtividadeUm.src.project.cleancode.infnet.vo.Cliente;
-import AtividadeUm.src.project.cleancode.infnet.vo.Produto;
+import AtividadeUm.src.project.cleancode.infnet.vo.PagamentoVO;
+import AtividadeUm.src.project.cleancode.infnet.vo.AssinaturaVO;
+import AtividadeUm.src.project.cleancode.infnet.vo.ClienteVO;
+import AtividadeUm.src.project.cleancode.infnet.vo.ProdutoVO;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -23,40 +23,40 @@ public class Start {
         System.out.println("\n=====================================QUESTÃO 1=============================================");
         System.out.println("Crie uma Classe com um método main para criar alguns produtos, clientes e pagamentos. Crie Pagamentos com: a data de hoje, ontem e um do mês passado.\n");
 
-        Cliente fabiano = new Cliente("Fabiano");
-        Cliente emiliano = new Cliente("Emiliano");
+        ClienteVO fabiano = new ClienteVO("Fabiano");
+        ClienteVO emiliano = new ClienteVO("Emiliano");
 
 
-        Produto produtoUm = new Produto("Livro", new BigDecimal("75.00"));
-        Produto produtoDois = new Produto("Filme", new BigDecimal("50.00"));
+        ProdutoVO produtoUm = new ProdutoVO("Livro", new BigDecimal("75.00"));
+        ProdutoVO produtoDois = new ProdutoVO("Filme", new BigDecimal("50.00"));
 
-        List<Produto> dividaUm = new ArrayList<>();
+        List<ProdutoVO> dividaUm = new ArrayList<>();
         dividaUm.add(produtoUm);
         dividaUm.add(produtoDois);
 
-        List<Produto> dividaDois = new ArrayList<>();
+        List<ProdutoVO> dividaDois = new ArrayList<>();
         dividaDois.add(produtoDois);
 
-        ArrayList<Pagamento> pagamentoFabiano = new ArrayList<>();
-        pagamentoFabiano.add(new Pagamento(dividaUm, LocalDateTime.now(), fabiano));
-        pagamentoFabiano.add(new Pagamento(dividaDois, LocalDateTime.now().minusDays(1), fabiano));
-        pagamentoFabiano.add(new Pagamento(dividaDois, LocalDateTime.now().minusMonths(1), fabiano));
+        ArrayList<PagamentoVO> pagamentoFabiano = new ArrayList<>();
+        pagamentoFabiano.add(new PagamentoVO(dividaUm, LocalDateTime.now(), fabiano));
+        pagamentoFabiano.add(new PagamentoVO(dividaDois, LocalDateTime.now().minusDays(1), fabiano));
+        pagamentoFabiano.add(new PagamentoVO(dividaDois, LocalDateTime.now().minusMonths(1), fabiano));
 
-        ArrayList<Pagamento> pagamentoEmiliano = new ArrayList<>();
-        pagamentoEmiliano.add(new Pagamento(dividaUm, LocalDateTime.now(), emiliano));
-        pagamentoEmiliano.add(new Pagamento(dividaDois, LocalDateTime.now().minusDays(1), emiliano));
+        ArrayList<PagamentoVO> pagamentoEmiliano = new ArrayList<>();
+        pagamentoEmiliano.add(new PagamentoVO(dividaUm, LocalDateTime.now(), emiliano));
+        pagamentoEmiliano.add(new PagamentoVO(dividaDois, LocalDateTime.now().minusDays(1), emiliano));
 
 
-        List<ArrayList<Pagamento>> Cliente = new ArrayList<>();
+        List<ArrayList<PagamentoVO>> Cliente = new ArrayList<>();
         Cliente.add(pagamentoFabiano);
         Cliente.add(pagamentoEmiliano);
 
         System.out.println("\n=====================================QUESTÃO 2=============================================");
         System.out.println("Ordene e imprima os pagamentos pela data de compra.\n");
 
-        Consumer<Produto> imprimirProdutoCliente = produtoCliente -> System.out.println("Nome: " + produtoCliente.getNome() + " - Valor: R$ " + produtoCliente.getPreco());
+        Consumer<ProdutoVO> imprimirProdutoCliente = produtoCliente -> System.out.println("Nome: " + produtoCliente.getNome() + " - Valor: R$ " + produtoCliente.getPreco());
 
-        Consumer<Pagamento> imprimirPagamentoCliente =
+        Consumer<PagamentoVO> imprimirPagamentoCliente =
                 pagamentoClienteData -> {
                     System.out.println("Data de Pagamento: " + pagamentoClienteData.getDataCompra() + "\nProdutos: ");
                     pagamentoClienteData.getProdutos().forEach(imprimirProdutoCliente);
@@ -64,7 +64,7 @@ public class Start {
                 };
 
         Cliente.forEach(ordenarPagamentoData ->{
-            ordenarPagamentoData.sort(comparing(Pagamento::getDataCompra));
+            ordenarPagamentoData.sort(comparing(PagamentoVO::getDataCompra));
             ordenarPagamentoData.forEach(imprimirPagamentoCliente);
         });
 
@@ -77,7 +77,7 @@ public class Start {
         System.out.println("\n=====================================QUESTÃO 4=============================================");
         System.out.println("Calcule o Valor de todos os pagamentos da Lista de pagamentos.\n");
 
-        Consumer<Pagamento> imprimirPagamentoTotal =
+        Consumer<PagamentoVO> imprimirPagamentoTotal =
                 pagamentoTotal -> {
                     System.out.println("Data de Pagamento: " + pagamentoTotal.getDataCompra() + "\nProdutos: " + pagamentoTotal.getProdutos().stream().mapToDouble(value -> value.getPreco().doubleValue()).sum());
                 };
@@ -89,7 +89,7 @@ public class Start {
 
         System.out.println("\n=====================================QUESTÃO 5=============================================");
         System.out.println("Imprima a quantidade de cada Produto vendido\n");
-        Consumer<Pagamento> imprimirQuantidadeProduto =
+        Consumer<PagamentoVO> imprimirQuantidadeProduto =
                 pagamentoTotal -> {
                     System.out.println("Data de Pagamento: " + pagamentoTotal.getDataCompra() + "\nProdutos: " + pagamentoTotal.getProdutos().stream().map(value -> value.getNome()).count());
                 };
@@ -103,7 +103,7 @@ public class Start {
 
         Cliente.forEach(cliente ->{
             System.out.println("Cliente: " + cliente.get(0).getCliente().getNome());
-            cliente.sort(comparing(Pagamento::getDataCompra));
+            cliente.sort(comparing(PagamentoVO::getDataCompra));
             cliente.forEach(imprimirPagamentoCliente);
         });
 
@@ -126,7 +126,7 @@ public class Start {
             System.out.println("Cliente: " + cliente.get(0).getCliente().getNome());
             AtomicReference<Double> totalPagamento = new AtomicReference<>(0.00);
             cliente.forEach(pagamento -> {
-                Optional<Produto> gastoMes = pagamento.getProdutos().stream().filter(mes -> pagamento.getDataCompra().getMonth() == Month.of(LocalDateTime.now().getMonth().ordinal()+1)).findAny();
+                Optional<ProdutoVO> gastoMes = pagamento.getProdutos().stream().filter(mes -> pagamento.getDataCompra().getMonth() == Month.of(LocalDateTime.now().getMonth().ordinal()+1)).findAny();
                 gastoMes.ifPresent((produto) -> {
                     totalPagamento.set(totalPagamento.get() + produto.getPreco().doubleValue());
                 });
@@ -136,10 +136,10 @@ public class Start {
 
         System.out.println("\n=====================================QUESTÃO 9=============================================");
         System.out.println("Crie 3 assinaturas com assinaturas de 99.98 reais, sendo 2 deles com assinaturas encerradas.\n");
-        ArrayList<Assinatura> assinatura = new ArrayList<>();
-        assinatura.add(new Assinatura(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.JANUARY, 1, 7, 0)));
-        assinatura.add(new Assinatura(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.FEBRUARY, 1, 8, 0), LocalDateTime.of(2023, Month.JUNE, 1, 11, 0)));
-        assinatura.add(new Assinatura(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.MARCH, 1, 9, 0), LocalDateTime.of(2023, Month.JULY, 1, 12, 0)));
+        ArrayList<AssinaturaVO> assinatura = new ArrayList<>();
+        assinatura.add(new AssinaturaVO(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.JANUARY, 1, 7, 0)));
+        assinatura.add(new AssinaturaVO(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.FEBRUARY, 1, 8, 0), LocalDateTime.of(2023, Month.JUNE, 1, 11, 0)));
+        assinatura.add(new AssinaturaVO(new BigDecimal("99.98"), LocalDateTime.of(2023, Month.MARCH, 1, 9, 0), LocalDateTime.of(2023, Month.JULY, 1, 12, 0)));
 
         System.out.println("\n=====================================QUESTÃO 10============================================");
         System.out.println("Imprima o tempo em meses de alguma assinatura ainda ativa.\n");

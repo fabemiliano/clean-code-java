@@ -3,7 +3,7 @@ package AtividadeUm.src.project.cleancode.infnet.vo;
 import java.math.BigDecimal;
 import java.nio.file.Path;
 
-public class Produto {
+public class ProdutoVO {
 
     private String nome;
 
@@ -11,7 +11,7 @@ public class Produto {
 
     private Path file;
 
-    public Produto(String nome, BigDecimal preco) {
+    public ProdutoVO(String nome, BigDecimal preco) {
         this.nome = nome;
         this.Preco = preco;
     }

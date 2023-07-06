@@ -1,36 +1,33 @@
-package AtividadeUm.src.project.cleancode.infnet.service;
-
-import AtividadeUm.src.project.cleancode.infnet.vo.Cliente;
-import AtividadeUm.src.project.cleancode.infnet.vo.Produto;
+package AtividadeUm.src.project.cleancode.infnet.vo;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
-public class Pagamento {
+public class PagamentoVO {
 
-    private List<Produto> produtos;
+    private List<ProdutoVO> produtos;
 
     private LocalDateTime dataCompra;
 
-    private Cliente cliente;
+    private ClienteVO cliente;
 
-    public Pagamento(List<Produto> produtos, LocalDateTime dataCompra, Cliente cliente) {
+    public PagamentoVO(List<ProdutoVO> produtos, LocalDateTime dataCompra, ClienteVO cliente) {
         this.produtos = produtos;
         this.dataCompra = dataCompra;
         this.cliente = cliente;
     }
 
-    public Pagamento(Pagamento pagamento) {
+    public PagamentoVO(PagamentoVO pagamento) {
         this.produtos = pagamento.getProdutos();
         this.dataCompra = pagamento.getDataCompra();
         this.cliente = pagamento.getCliente();
     }
 
-    public List<Produto> getProdutos() {
+    public List<ProdutoVO> getProdutos() {
         return produtos;
     }
-    public void setProdutos(List<Produto> produtos) {
+    public void setProdutos(List<ProdutoVO> produtos) {
         this.produtos = produtos;
     }
 
@@ -42,19 +39,19 @@ public class Pagamento {
         this.dataCompra = dataCompra;
     }
 
-    public Cliente getCliente() {
+    public ClienteVO getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(ClienteVO cliente) {
         this.cliente = cliente;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Pagamento)) return false;
-        Pagamento pagamento = (Pagamento) o;
+        if (!(o instanceof PagamentoVO)) return false;
+        PagamentoVO pagamento = (PagamentoVO) o;
         return Objects.equals(getProdutos(), pagamento.getProdutos()) && Objects.equals(getDataCompra(), pagamento.getDataCompra()) && Objects.equals(getCliente(), pagamento.getCliente());
     }
 

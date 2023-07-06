@@ -2,11 +2,11 @@ package AtividadeUm.src.project.cleancode.infnet.vo;
 
 import java.util.Objects;
 
-public class Cliente {
+public class ClienteVO {
 
     private String Nome;
 
-    public Cliente(String nome) {
+    public ClienteVO(String nome) {
         this.Nome = nome;
     }
 
@@ -21,8 +21,8 @@ public class Cliente {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Cliente)) return false;
-        Cliente cliente = (Cliente) o;
+        if (!(o instanceof ClienteVO)) return false;
+        ClienteVO cliente = (ClienteVO) o;
         return Objects.equals(getNome(), cliente.getNome());
     }
 
