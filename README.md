@@ -17,3 +17,8 @@ Rode o seu código no SonarQube. Se possuir problemas corrija-os. Se não, parab
 Coloque os prints do SonarQube dentro de uma pasta chamada sonar na raiz do seu projeto.
 
 Versione seu novo código em outro repositório ou uma branch diferente da tarefa anterior.
+
+# Tokens
+
+fabianoclean: 0f235a2e25f2db4d6f904f547bf536415540d233
+mvn sonar:sonar -Dsonar.projectKey=Fabiano-SonarQube -Dsonar.host.url=http://localhost:9000 -Dsonar.login=0f235a2e25f2db4d6f904f547bf536415540d233
