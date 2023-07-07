@@ -1,4 +1,4 @@
-package AtividadeUm.src.project.cleancode.infnet.vo;
+package AtividadeDois.src.project.cleancode.infnet.vo;
 
 import java.math.BigDecimal;
 import java.nio.file.Path;
@@ -10,6 +10,9 @@ public class ProdutoVO {
     private BigDecimal Preco;
 
     private Path file;
+
+    public ProdutoVO(){
+    }
 
     public ProdutoVO(String nome, BigDecimal preco) {
         this.nome = nome;
@@ -40,8 +43,4 @@ public class ProdutoVO {
         this.file = file;
     }
 
-    @Override
-    public String toString() {
-        return Preco.toString();
-    }
 }

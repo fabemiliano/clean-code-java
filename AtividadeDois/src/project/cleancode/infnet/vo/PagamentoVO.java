@@ -1,10 +1,9 @@
-package AtividadeUm.src.project.cleancode.infnet.vo;
+package AtividadeDois.src.project.cleancode.infnet.vo;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
-public class PagamentoVO {
+public class PagamentoVO extends AssinaturaVO {
 
     private List<ProdutoVO> produtos;
 
@@ -12,7 +11,8 @@ public class PagamentoVO {
 
     private ClienteVO cliente;
 
-    public PagamentoVO(List<ProdutoVO> produtos, LocalDateTime dataCompra, ClienteVO cliente) {
+    public PagamentoVO(List<ProdutoVO> produtos, LocalDateTime dataCompra, ClienteVO cliente, AssinaturaVO assinatura) {
+        super(assinatura.getBegin(), assinatura.getTipoAssinatura(), assinatura.getQuitado());
         this.produtos = produtos;
         this.dataCompra = dataCompra;
         this.cliente = cliente;
@@ -47,16 +47,5 @@ public class PagamentoVO {
         this.cliente = cliente;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PagamentoVO)) return false;
-        PagamentoVO pagamento = (PagamentoVO) o;
-        return Objects.equals(getProdutos(), pagamento.getProdutos()) && Objects.equals(getDataCompra(), pagamento.getDataCompra()) && Objects.equals(getCliente(), pagamento.getCliente());
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getProdutos(), getDataCompra(), getCliente());
-    }
 }
