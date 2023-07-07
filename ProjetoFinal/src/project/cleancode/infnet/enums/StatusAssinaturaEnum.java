@@ -1,4 +1,4 @@
-package AtividadeDois.src.project.cleancode.infnet.enums;
+package ProjetoFinal.src.project.cleancode.infnet.enums;
 
 public enum StatusAssinaturaEnum {
 

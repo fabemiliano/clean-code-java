@@ -1,7 +1,7 @@
-package AtividadeDois.src.project.cleancode.infnet.vo;
+package ProjetoFinal.src.project.cleancode.infnet.vo;
 
-import AtividadeDois.src.project.cleancode.infnet.enums.AssinaturaEnum;
-import AtividadeDois.src.project.cleancode.infnet.enums.StatusAssinaturaEnum;
+import ProjetoFinal.src.project.cleancode.infnet.enums.AssinaturaEnum;
+import ProjetoFinal.src.project.cleancode.infnet.enums.StatusAssinaturaEnum;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

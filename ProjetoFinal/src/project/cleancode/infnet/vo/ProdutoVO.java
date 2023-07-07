@@ -1,4 +1,4 @@
-package AtividadeDois.src.project.cleancode.infnet.vo;
+package ProjetoFinal.src.project.cleancode.infnet.vo;
 
 import java.math.BigDecimal;
 import java.nio.file.Path;

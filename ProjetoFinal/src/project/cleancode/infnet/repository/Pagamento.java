@@ -1,12 +1,11 @@
-package AtividadeDois.src.project.cleancode.infnet.repository;
+package ProjetoFinal.src.project.cleancode.infnet.repository;
 
-import AtividadeDois.src.project.cleancode.infnet.vo.AssinaturaVO;
-import AtividadeDois.src.project.cleancode.infnet.vo.ClienteVO;
-import AtividadeDois.src.project.cleancode.infnet.vo.PagamentoVO;
-import AtividadeDois.src.project.cleancode.infnet.vo.ProdutoVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.AssinaturaVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.ClienteVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.PagamentoVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.ProdutoVO;
 
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 
 public class Pagamento {

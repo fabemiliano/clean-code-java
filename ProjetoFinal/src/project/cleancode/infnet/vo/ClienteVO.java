@@ -1,6 +1,4 @@
-package AtividadeDois.src.project.cleancode.infnet.vo;
-
-import java.util.Objects;
+package ProjetoFinal.src.project.cleancode.infnet.vo;
 
 public class ClienteVO {
 

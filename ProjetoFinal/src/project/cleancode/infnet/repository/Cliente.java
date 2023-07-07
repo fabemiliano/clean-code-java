@@ -1,6 +1,6 @@
-package AtividadeDois.src.project.cleancode.infnet.repository;
+package ProjetoFinal.src.project.cleancode.infnet.repository;
 
-import AtividadeDois.src.project.cleancode.infnet.vo.ClienteVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.ClienteVO;
 
 import java.util.ArrayList;
 

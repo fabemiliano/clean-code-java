@@ -1,6 +1,6 @@
-package AtividadeDois.src.project.cleancode.infnet.repository;
+package ProjetoFinal.src.project.cleancode.infnet.repository;
 
-import AtividadeDois.src.project.cleancode.infnet.vo.ProdutoVO;
+import ProjetoFinal.src.project.cleancode.infnet.vo.ProdutoVO;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

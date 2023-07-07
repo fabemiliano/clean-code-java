@@ -1,7 +1,7 @@
-package AtividadeDois.src.project.cleancode.infnet.repository;
+package ProjetoFinal.src.project.cleancode.infnet.repository;
 
-import AtividadeDois.src.project.cleancode.infnet.enums.AssinaturaEnum;
-import AtividadeDois.src.project.cleancode.infnet.vo.AssinaturaVO;
+import ProjetoFinal.src.project.cleancode.infnet.enums.AssinaturaEnum;
+import ProjetoFinal.src.project.cleancode.infnet.vo.AssinaturaVO;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

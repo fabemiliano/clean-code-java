@@ -1,4 +1,4 @@
-package AtividadeDois.src.project.cleancode.infnet.vo;
+package ProjetoFinal.src.project.cleancode.infnet.vo;
 
 import java.time.LocalDateTime;
 import java.util.List;

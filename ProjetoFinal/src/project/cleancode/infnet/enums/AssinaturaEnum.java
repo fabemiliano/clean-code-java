@@ -1,8 +1,8 @@
-package AtividadeDois.src.project.cleancode.infnet.enums;
+package ProjetoFinal.src.project.cleancode.infnet.enums;
 
 import java.math.BigDecimal;
 
-import static AtividadeDois.src.project.cleancode.infnet.util.constants.AssinaturaConstants.*;
+import static ProjetoFinal.src.project.cleancode.infnet.util.constants.AssinaturaConstants.*;
 
 public enum AssinaturaEnum {
 
