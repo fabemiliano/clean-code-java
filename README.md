@@ -37,3 +37,11 @@ Pagamento [List, dataCompra, Cliente]
 
 12 - Calcule o valor pago em cada assinatura até o momento.
 # clean-code-java
+
+
+
+# Tokens
+
+fabianoclean: 0f235a2e25f2db4d6f904f547bf536415540d233
+mvn sonar:sonar -Dsonar.projectKey=Fabiano-SonarQube -Dsonar.host.url=http://localhost:9000 -Dsonar.login=0f235a2e25f2db4d6f904f547bf536415540d233
+
